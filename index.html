@@ -3,923 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PrintPro - Digital Printing Services</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        /* CSS */
-        :root {
-            --primary-color: #0066cc;
-            --secondary-color: #ff6600;
-            --dark-color: #333;
-            --light-color: #f4f4f4;
-            --success-color: #28a745;
-        }
-        
-        * {
-            margin: 0;
+    <title>app creation</title>
+    <link href="https://cdn.lineicons.com/5.0/lineicons.css" rel="stylesheet" />
+       <style>* {
+            margin: -4px 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: system-ui;
         }
-        
-        body {
-            background-color: #f9f9f9;
-            color: var(--dark-color);
-            line-height: 1.6;
+        p {
+            font-size: 30px; 
+            font-weight: 100;
+            margin-top: 10px;
         }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
+
+        p:hover {
+            color: rgb(0, 195, 255);
         }
-        
-        /* Header */
-        header {
-            background-color: white;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
+
+        .body-images {
+            width: 500px;
+            height: 300px;
+            margin: -4px -2.3px;
         }
-        
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 0;
+
+        .body-image-container{
+            margin: 8px 0;
         }
-        
-        .logo {
-            display: flex;
-            align-items: center;
-        }
-        
-        .logo img {
-            height: 40px;
-            margin-right: 10px;
-        }
-        
-        .logo h1 {
-            color: var(--primary-color);
-            font-size: 1.5rem;
-        }
-        
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-        
-        .nav-links li {
-            margin-left: 25px;
-        }
-        
-        .nav-links a {
-            text-decoration: none;
-            color: var(--dark-color);
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        
-        .nav-links a:hover {
-            color: var(--primary-color);
-        }
-        
-        .cart-icon {
-            position: relative;
-        }
-        
-        .cart-count {
-            position: absolute;
-            top: -8px;
-            right: -8px;
-            background-color: var(--secondary-color);
+        .contact-container {
+            background-color: black;
             color: white;
-            border-radius: 50%;
-            width: 18px;
-            height: 18px;
+            padding: 50px;
+            gap: 20px;
             display: flex;
-            align-items: center;
             justify-content: center;
-            font-size: 0.7rem;
-        }
-        
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1597852074816-d933c7d2b988');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 80px 0;
-            text-align: center;
-        }
-        
-        .hero h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-        
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto 30px;
-        }
-        
-        .btn {
-            display: inline-block;
-            background-color: var(--primary-color);
-            color: white;
-            padding: 12px 25px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: 500;
-            transition: background-color 0.3s;
-        }
-        
-        .btn:hover {
-            background-color: #0052a3;
-        }
-        
-        .btn-secondary {
-            background-color: var(--secondary-color);
-        }
-        
-        .btn-secondary:hover {
-            background-color: #e05c00;
-        }
-        
-        /* Services Section */
-        .services {
-            padding: 60px 0;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-        
-        .section-title h2 {
-            font-size: 2rem;
-            color: var(--primary-color);
-            margin-bottom: 15px;
-        }
-        
-        .section-title p {
-            color: #666;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
-        
-        .service-card {
-            background-color: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-        }
-        
-        .service-img {
-            height: 180px;
-            overflow: hidden;
-        }
-        
-        .service-img img {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s;
         }
-        
-        .service-card:hover .service-img img {
-            transform: scale(1.1);
-        }
-        
-        .service-content {
-            padding: 20px;
-        }
-        
-        .service-content h3 {
-            margin-bottom: 10px;
-            color: var(--dark-color);
-        }
-        
-        .service-content p {
-            color: #666;
-            margin-bottom: 15px;
-            font-size: 0.9rem;
-        }
-        
-        .price {
-            font-weight: bold;
-            color: var(--primary-color);
-            font-size: 1.1rem;
-            margin-bottom: 15px;
-        }
-        
-        /* Upload Section */
-        .upload-section {
-            background-color: var(--light-color);
-            padding: 60px 0;
-            text-align: center;
-        }
-        
-        .upload-container {
-            max-width: 800px;
-            margin: 0 auto;
+
+        .footer-section {
             background-color: white;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        }
-        
-        .upload-area {
-            border: 2px dashed #ccc;
-            border-radius: 5px;
-            padding: 40px;
-            margin-bottom: 20px;
-            cursor: pointer;
-            transition: border-color 0.3s;
-        }
-        
-        .upload-area:hover {
-            border-color: var(--primary-color);
-        }
-        
-        .upload-area i {
-            font-size: 3rem;
-            color: var(--primary-color);
-            margin-bottom: 15px;
-        }
-        
-        .upload-area p {
-            margin-bottom: 10px;
-        }
-        
-        .upload-area span {
-            font-size: 0.9rem;
-            color: #666;
-        }
-        
-        .options {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 30px;
-        }
-        
-        .option-group {
-            flex: 1;
-            margin: 0 10px;
-            text-align: left;
-        }
-        
-        .option-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
-        }
-        
-        .option-group select, .option-group input {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-        
-        /* Cart Modal */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            z-index: 1000;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        .modal-content {
-            background-color: white;
-            border-radius: 10px;
-            width: 90%;
-            max-width: 600px;
-            max-height: 80vh;
-            overflow-y: auto;
-            padding: 30px;
-            position: relative;
-        }
-        
-        .close-modal {
-            position: absolute;
-            top: 15px;
-            right: 20px;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: #666;
-        }
-        
-        .cart-items {
-            margin: 20px 0;
-        }
-        
-        .cart-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 0;
-            border-bottom: 1px solid #eee;
-        }
-        
-        .cart-item-info {
-            display: flex;
-            align-items: center;
-        }
-        
-        .cart-item-img {
-            width: 60px;
             height: 60px;
-            border-radius: 5px;
-            overflow: hidden;
-            margin-right: 15px;
-        }
-        
-        .cart-item-img img {
+            position: fixed;
+            left: 0;
+            bottom: 0;
             width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .cart-item-details h4 {
-            margin-bottom: 5px;
-        }
-        
-        .cart-item-details p {
-            font-size: 0.9rem;
-            color: #666;
-        }
-        
-        .cart-item-price {
-            font-weight: bold;
-            color: var(--primary-color);
-        }
-        
-        .cart-total {
-            text-align: right;
-            margin-top: 20px;
-            font-size: 1.2rem;
-            font-weight: bold;
-        }
-        
-        /* Footer */
-        footer {
-            background-color: var(--dark-color);
-            color: white;
-            padding: 50px 0 20px;
-        }
-        
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-            margin-bottom: 30px;
-        }
-        
-        .footer-column h3 {
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-            color: var(--light-color);
-        }
-        
-        .footer-column ul {
-            list-style: none;
-        }
-        
-        .footer-column ul li {
-            margin-bottom: 10px;
-        }
-        
-        .footer-column ul li a {
-            color: #bbb;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        
-        .footer-column ul li a:hover {
-            color: white;
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 15px;
-        }
-        
-        .social-links a {
-            color: white;
-            font-size: 1.2rem;
-        }
-        
-        .footer-bottom {
             text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid #444;
-            color: #bbb;
-            font-size: 0.9rem;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 20px 20px 20px;
+            font-size: 35px;
         }
-        
-        /* Responsive */
-        @media (max-width: 768px) {
-            .navbar {
-                flex-direction: column;
-                padding: 15px 0;
-            }
-            
-            .nav-links {
-                margin-top: 20px;
-            }
-            
-            .nav-links li {
-                margin: 0 10px;
-            }
-            
-            .hero h2 {
-                font-size: 2rem;
-            }
-            
-            .options {
-                flex-direction: column;
-            }
-            
-            .option-group {
-                margin: 10px 0;
-            }
-            
-            .upload-container {
-                padding: 20px;
-            }
+        .footer-icons {
+            color: black;
+            text-decoration: none;
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <nav class="navbar">
-                <div class="logo">
-                    <img src="https://via.placeholder.com/40" alt="PrintPro Logo">
-                    <h1>PrintPro</h1>
-                </div>
-                <ul class="nav-links">
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#upload">Upload & Print</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li>
-                        <a href="#" class="cart-icon" id="cartIcon">
-                            <i class="fas fa-shopping-cart"></i>
-                            <span class="cart-count" id="cartCount">0</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <div style="text-align: center; width: 100%;">
+        
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <h2>Professional Printing Services</h2>
-            <p>High-quality printing with fast turnaround times. Upload your files and get your prints delivered to your doorstep.</p>
-            <a href="#upload" class="btn">Upload & Print Now</a>
-        </div>
-    </section>
+        
+        <img  style=" width: 100%;" src="https://images.unsplash.com/photo-1575936123452-b67c3203c357?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
 
-    <!-- Services Section -->
-    <section class="services" id="services">
-        <div class="container">
-            <div class="section-title">
-                <h2>Our Printing Services</h2>
-                <p>Choose from our wide range of professional printing services</p>
-            </div>
-            <div class="services-grid">
-                <!-- Service 1 -->
-                <div class="service-card">
-                    <div class="service-img">
-                        <img src="https://images.unsplash.com/photo-1541140134513-85a161dc4a00" alt="Document Printing">
-                    </div>
-                    <div class="service-content">
-                        <h3>Document Printing</h3>
-                        <p>High-quality printing for all your documents, reports, and presentations.</p>
-                        <div class="price">From ₦50/page</div>
-                        <button class="btn btn-secondary add-to-cart" data-service="Document Printing" data-price="50">Add to Cart</button>
-                    </div>
-                </div>
-                
-                <!-- Service 2 -->
-                <div class="service-card">
-                    <div class="service-img">
-                        <img src="https://images.unsplash.com/photo-1568515387631-8b650bbcdb90" alt="Photo Printing">
-                    </div>
-                    <div class="service-content">
-                        <h3>Photo Printing</h3>
-                        <p>Vibrant photo prints in various sizes and finishes.</p>
-                        <div class="price">From ₦200/print</div>
-                        <button class="btn btn-secondary add-to-cart" data-service="Photo Printing" data-price="200">Add to Cart</button>
-                    </div>
-                </div>
-                
-                <!-- Service 3 -->
-                <div class="service-card">
-                    <div class="service-img">
-                        <img src="https://images.unsplash.com/photo-1579536938190-6d07a7e896b7" alt="Business Cards">
-                    </div>
-                    <div class="service-content">
-                        <h3>Business Cards</h3>
-                        <p>Premium quality business cards to make lasting impressions.</p>
-                        <div class="price">From ₦2,000/set</div>
-                        <button class="btn btn-secondary add-to-cart" data-service="Business Cards" data-price="2000">Add to Cart</button>
-                    </div>
-                </div>
-                
-                <!-- Service 4 -->
-                <div class="service-card">
-                    <div class="service-img">
-                        <img src="https://images.unsplash.com/photo-1600857544200-b2f666a9a2ec" alt="Flyers & Brochures">
-                    </div>
-                    <div class="service-content">
-                        <h3>Flyers & Brochures</h3>
-                        <p>Eye-catching marketing materials for your business.</p>
-                        <div class="price">From ₦1,500/100pcs</div>
-                        <button class="btn btn-secondary add-to-cart" data-service="Flyers & Brochures" data-price="1500">Add to Cart</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+        <div class="contact-container">
+            <p>Contact Us On</p>
 
-    <!-- Upload Section -->
-    <section class="upload-section" id="upload">
-        <div class="container">
-            <div class="upload-container">
-                <h2>Upload Your Files</h2>
-                <p>Upload your files and we'll handle the rest</p>
-                
-                <div class="upload-area" id="uploadArea">
-                    <i class="fas fa-cloud-upload-alt"></i>
-                    <p>Drag & Drop your files here</p>
-                    <span>or click to browse files</span>
-                    <input type="file" id="fileInput" style="display: none;" multiple>
-                </div>
-                
-                <div class="options">
-                    <div class="option-group">
-                        <label for="printType">Print Type</label>
-                        <select id="printType">
-                            <option value="color">Color Printing</option>
-                            <option value="bw">Black & White</option>
-                            <option value="premium">Premium Quality</option>
-                        </select>
-                    </div>
-                    
-                    <div class="option-group">
-                        <label for="paperSize">Paper Size</label>
-                        <select id="paperSize">
-                            <option value="a4">A4</option>
-                            <option value="a5">A5</option>
-                            <option value="letter">Letter</option>
-                            <option value="legal">Legal</option>
-                        </select>
-                    </div>
-                    
-                    <div class="option-group">
-                        <label for="quantity">Quantity</label>
-                        <input type="number" id="quantity" min="1" value="1">
-                    </div>
-                </div>
-                
-                <button class="btn" id="addToCartBtn">Add to Cart</button>
-            </div>
-        </div>
-    </section>
 
-    <!-- Cart Modal -->
-    <div class="modal" id="cartModal">
-        <div class="modal-content">
-            <span class="close-modal" id="closeModal">&times;</span>
-            <h2>Your Cart</h2>
-            <div class="cart-items" id="cartItems">
-                <!-- Cart items will be added here dynamically -->
-            </div>
-            <div class="cart-total">
-                Total: <span id="cartTotal">₦0</span>
-            </div>
-            <button class="btn" id="checkoutBtn">Proceed to Checkout</button>
+            <a href="https://mail.google.com/mail" >
+                <video href="https://mail.google.com/mail" style="width: 70px; border-radius: 50%;" src="https://cdn-icons-mp4.flaticon.com/512/6172/6172514.mp4" loop autoplay muted></video>
+            </a>
+            
+            
+            
+            <p>+234 702 222 2222</p>
+
         </div>
+
+        
+        <div class="body-image-container">
+            <!--1st image-->
+            <img class="body-images" src="https://image-processor-storage.s3.us-west-2.amazonaws.com/images/894bf07849dd9b55bdbb97ac22a0aeae/abstract-multicolored-circle-shapes-spiraling-into-the-future-unleashing-innovation.jpg" alt="">
+            <!--2rd image-->
+            <img class="body-images" src="https://image-processor-storage.s3.us-west-2.amazonaws.com/uploads/3d991218f17234e2921259613b654354/gettyimages-1473073690jpg.jpg" alt="">
+            <!--3rd image-->
+            <img class="body-images" src="https://image-processor-storage.s3.us-west-2.amazonaws.com/images/7396d1bab260a7b69fe13dc6fdcefd2c/skyscrapers-and-infrastructure-in-a-modern-city.jpg" alt="">
+            <!--4th image-->
+            <img class="body-images" src="https://image-processor-storage.s3.us-west-2.amazonaws.com/images/446bf44e246288954115446b1f78e03d/evolution-of-shape.jpg" alt="">
+        </div>
+        
+        
+        
     </div>
-
-    <!-- Footer -->
-    <footer id="contact">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <h3>PrintPro</h3>
-                    <p>Professional printing services with fast turnaround and delivery options.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-                
-                <div class="footer-column">
-                    <h3>Services</h3>
-                    <ul>
-                        <li><a href="#">Document Printing</a></li>
-                        <li><a href="#">Photo Printing</a></li>
-                        <li><a href="#">Business Cards</a></li>
-                        <li><a href="#">Flyers & Brochures</a></li>
-                        <li><a href="#">Banners & Posters</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-column">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#upload">Upload & Print</a></li>
-                        <li><a href="#">Pricing</a></li>
-                        <li><a href="#contact">Contact Us</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-column">
-                    <h3>Contact Us</h3>
-                    <ul>
-                        <li><i class="fas fa-map-marker-alt"></i> 123 Print Street, Lagos</li>
-                        <li><i class="fas fa-phone"></i> +234 812 345 6789</li>
-                        <li><i class="fas fa-envelope"></i> info@printpro.com</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2023 PrintPro. All Rights Reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- JavaScript -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Cart functionality
-            let cart = [];
-            const cartIcon = document.getElementById('cartIcon');
-            const cartCount = document.getElementById('cartCount');
-            const cartModal = document.getElementById('cartModal');
-            const closeModal = document.getElementById('closeModal');
-            const cartItems = document.getElementById('cartItems');
-            const cartTotal = document.getElementById('cartTotal');
-            const checkoutBtn = document.getElementById('checkoutBtn');
-            const addToCartButtons = document.querySelectorAll('.add-to-cart');
-            const addToCartBtn = document.getElementById('addToCartBtn');
-            const uploadArea = document.getElementById('uploadArea');
-            const fileInput = document.getElementById('fileInput');
-            
-            // Add service to cart from service cards
-            addToCartButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    const service = this.getAttribute('data-service');
-                    const price = parseInt(this.getAttribute('data-price'));
-                    
-                    addToCart(service, price, 1);
-                });
-            });
-            
-            // Add custom print to cart
-            addToCartBtn.addEventListener('click', function() {
-                const printType = document.getElementById('printType').value;
-                const paperSize = document.getElementById('paperSize').value;
-                const quantity = parseInt(document.getElementById('quantity').value);
-                
-                if (fileInput.files.length === 0) {
-                    alert('Please upload at least one file');
-                    return;
-                }
-                
-                // Calculate price based on options
-                let pricePerPage = 50; // base price
-                
-                if (printType === 'bw') {
-                    pricePerPage = 30;
-                } else if (printType === 'premium') {
-                    pricePerPage = 80;
-                }
-                
-                // Adjust for paper size
-                if (paperSize === 'a5') {
-                    pricePerPage *= 0.8;
-                } else if (paperSize === 'letter' || paperSize === 'legal') {
-                    pricePerPage *= 1.2;
-                }
-                
-                const totalPrice = Math.round(pricePerPage * quantity);
-                
-                const serviceName = `Custom Print (${printType}, ${paperSize}, ${quantity} pages)`;
-                
-                addToCart(serviceName, totalPrice, quantity);
-                
-                // Reset form
-                fileInput.value = '';
-                document.getElementById('quantity').value = 1;
-                
-                alert('Your custom print job has been added to cart!');
-            });
-            
-            // File upload functionality
-            uploadArea.addEventListener('click', function() {
-                fileInput.click();
-            });
-            
-            uploadArea.addEventListener('dragover', function(e) {
-                e.preventDefault();
-                this.style.borderColor = 'var(--primary-color)';
-                this.style.backgroundColor = 'rgba(0, 102, 204, 0.1)';
-            });
-            
-            uploadArea.addEventListener('dragleave', function() {
-                this.style.borderColor = '#ccc';
-                this.style.backgroundColor = 'transparent';
-            });
-            
-            uploadArea.addEventListener('drop', function(e) {
-                e.preventDefault();
-                this.style.borderColor = '#ccc';
-                this.style.backgroundColor = 'transparent';
-                
-                if (e.dataTransfer.files.length) {
-                    fileInput.files = e.dataTransfer.files;
-                    updateUploadArea();
-                }
-            });
-            
-            fileInput.addEventListener('change', updateUploadArea);
-            
-            function updateUploadArea() {
-                if (fileInput.files.length > 0) {
-                    const filesList = Array.from(fileInput.files).map(file => file.name).join(', ');
-                    uploadArea.innerHTML = `<i class="fas fa-check-circle"></i>
-                                            <p>${fileInput.files.length} file(s) selected</p>
-                                            <span>${filesList}</span>`;
-                    uploadArea.style.borderColor = 'var(--success-color)';
-                }
-            }
-            
-            // Cart modal functionality
-            cartIcon.addEventListener('click', function(e) {
-                e.preventDefault();
-                cartModal.style.display = 'flex';
-                updateCartDisplay();
-            });
-            
-            closeModal.addEventListener('click', function() {
-                cartModal.style.display = 'none';
-            });
-            
-            window.addEventListener('click', function(e) {
-                if (e.target === cartModal) {
-                    cartModal.style.display = 'none';
-                }
-            });
-            
-            checkoutBtn.addEventListener('click', function() {
-                if (cart.length === 0) {
-                    alert('Your cart is empty!');
-                    return;
-                }
-                
-                alert('Proceeding to checkout! In a real app, this would redirect to payment.');
-                cartModal.style.display = 'none';
-            });
-            
-            // Cart functions
-            function addToCart(service, price, quantity) {
-                // Check if item already exists in cart
-                const existingItem = cart.find(item => item.service === service);
-                
-                if (existingItem) {
-                    existingItem.quantity += quantity;
-                } else {
-                    cart.push({
-                        service: service,
-                        price: price,
-                        quantity: quantity
-                    });
-                }
-                
-                updateCartCount();
-                showCartNotification(service);
-            }
-            
-            function updateCartCount() {
-                const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
-                cartCount.textContent = totalItems;
-            }
-            
-            function updateCartDisplay() {
-                cartItems.innerHTML = '';
-                
-                if (cart.length === 0) {
-                    cartItems.innerHTML = '<p>Your cart is empty</p>';
-                    cartTotal.textContent = '₦0';
-                    return;
-                }
-                
-                let total = 0;
-                
-                cart.forEach(item => {
-                    const itemTotal = item.price * item.quantity;
-                    total += itemTotal;
-                    
-                    const cartItemElement = document.createElement('div');
-                    cartItemElement.className = 'cart-item';
-                    cartItemElement.innerHTML = `
-                        <div class="cart-item-info">
-                            <div class="cart-item-img">
-                                <img src="https://via.placeholder.com/60" alt="${item.service}">
-                            </div>
-                            <div class="cart-item-details">
-                                <h4>${item.service}</h4>
-                                <p>Qty: ${item.quantity}</p>
-                            </div>
-                        </div>
-                        <div class="cart-item-price">₦${itemTotal.toLocaleString()}</div>
-                    `;
-                    
-                    cartItems.appendChild(cartItemElement);
-                });
-                
-                cartTotal.textContent = `₦${total.toLocaleString()}`;
-            }
-            
-            function showCartNotification(service) {
-                const notification = document.createElement('div');
-                notification.className = 'cart-notification';
-                notification.innerHTML = `
-                    <i class="fas fa-check-circle"></i>
-                    <span>${service} added to cart</span>
-                `;
-                
-                notification.style.position = 'fixed';
-                notification.style.bottom = '20px';
-                notification.style.right = '20px';
-                notification.style.backgroundColor = 'var(--success-color)';
-                notification.style.color = 'white';
-                notification.style.padding = '15px 20px';
-                notification.style.borderRadius = '5px';
-                notification.style.display = 'flex';
-                notification.style.alignItems = 'center';
-                notification.style.gap = '10px';
-                notification.style.zIndex = '1000';
-                notification.style.boxShadow = '0 3px 10px rgba(0, 0, 0, 0.2)';
-                notification.style.animation = 'slideIn 0.3s ease-out';
-                
-                document.body.appendChild(notification);
-                
-                setTimeout(() => {
-                    notification.style.animation = 'slideOut 0.3s ease-out';
-                    setTimeout(() => {
-                        document.body.removeChild(notification);
-                    }, 300);
-                }, 3000);
-                
-                // Add keyframes for animation
-                const style = document.createElement('style');
-                style.textContent = `
-                    @keyframes slideIn {
-                        from { transform: translateX(100%); opacity: 0; }
-                        to { transform: translateX(0); opacity: 1; }
-                    }
-                    @keyframes slideOut {
-                        from { transform: translateX(0); opacity: 1; }
-                        to { transform: translateX(100%); opacity: 0; }
-                    }
-                `;
-                document.head.appendChild(style);
-            }
-        });
-    </script>
+    <div class="footer-section">
+        <a href="" class="footer-icons active">
+            <i class="lni lni-home-2"></i>
+        </a>
+        <a href="" class="footer-icons">
+            <i class="lni lni-buildings-1"></i>
+        <a href="" class="footer-icons">
+            <i class="lni lni-layers-1"></i>
+        </a>
+        <a href="" class="footer-icons">
+            <i class="lni lni-cart-1"></i>
+        </a>
+    </div>
 </body>
 </html>
